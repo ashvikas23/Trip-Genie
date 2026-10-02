@@ -1,0 +1,525 @@
+body{
+font-family:"Poppins", Arial, sans-serif;
+margin:0;
+background:linear-gradient(135deg,#eaf6ff,#f8f5ff);
+text-align:center;
+}
+
+/* HEADER */
+
+header{
+position:relative;
+overflow:hidden;
+background:linear-gradient(120deg,#cdb4ff,#7cc6fe);
+background-size:200% 200%;
+animation:skyShift 10s ease-in-out infinite;
+color:white;
+padding:50px 20px;
+}
+
+@keyframes skyShift{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+header h1{
+font-size:40px;
+margin-bottom:10px;
+}
+
+/* FEATURES */
+
+.features{
+display:flex;
+justify-content:center;
+gap:25px;
+margin:40px;
+flex-wrap:wrap;
+}
+
+.feature{
+background:white;
+padding:25px;
+border-radius:12px;
+width:250px;
+box-shadow:0 6px 15px rgba(0,0,0,0.1);
+transition:transform .25s ease, box-shadow .25s ease;
+}
+
+.feature:hover{
+transform:translateY(-10px) scale(1.03);
+box-shadow:0 12px 30px rgba(0,0,0,0.15);
+background:linear-gradient(120deg,#ffffff,#ecd2f7);
+}
+
+.feature h3 span{
+display:inline-block;
+transition:transform .3s ease;
+}
+
+.feature:hover h3 span{
+transform:scale(1.2) rotate(5deg);
+}
+
+/* ABOUT SECTION */
+
+.about{
+background:linear-gradient(120deg,#ffffff,#c6e8ff);
+padding:45px;
+margin:40px auto;
+border-radius:15px;
+max-width:900px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+text-align:left;
+}
+
+.about h2{
+text-align:center;
+margin-bottom:20px;
+color:#444;
+}
+
+.about p{
+color:#555;
+line-height:1.6;
+font-size:15px;
+}
+
+/* HOW IT WORKS */
+
+.how{
+margin:50px 20px;
+}
+
+.steps{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin-top:25px;
+}
+
+.step{
+background:white;
+padding:20px;
+border-radius:10px;
+width:180px;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+transition:transform .25s ease;
+}
+
+.step:hover{
+transform:scale(1.05);
+}
+
+/* POPULAR DESTINATIONS */
+
+.destinations{
+display:flex;
+justify-content:center;
+gap:25px;
+margin-top:20px;
+flex-wrap:wrap;
+position:relative;
+}
+
+.dest{
+background:linear-gradient(120deg,#e8f1ff,#f5f3ff);
+padding:15px 24px;
+border-radius:25px;
+font-weight:bold;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+animation:floatBubble 5s ease-in-out infinite;
+transition:transform .2s ease;
+}
+
+/* different floating timing */
+
+.dest:nth-child(1){ animation-delay:4s }
+.dest:nth-child(2){ animation-delay:5s }
+.dest:nth-child(3){ animation-delay:6s }
+.dest:nth-child(4){ animation-delay:4.5s }
+
+.dest:hover{
+transform:scale(1.15);
+}
+
+@keyframes floatBubble{
+0%{ transform:translateY(0px) }
+50%{ transform:translateY(-10px) }
+100%{ transform:translateY(0px) }
+}
+
+/* CHAT BUTTON */
+
+#chatButton{
+position:fixed;
+bottom:20px;
+right:20px;
+background:linear-gradient(120deg,#7cc6fe,#a8e6cf,#cdb4ff);
+background-size:200% 200%;
+color:white;
+border:none;
+padding:16px 26px;
+border-radius:30px;
+cursor:pointer;
+font-size:16px;
+font-weight:bold;
+box-shadow:0 8px 20px rgba(0,0,0,0.2);
+animation:pulse 2.5s infinite;
+transition:all .3s ease;
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+/* hover effect */
+
+#chatButton:hover{
+transform:translateY(-6px) scale(1.08);
+background-position:100% 0;
+box-shadow:0 15px 35px rgba(0,0,0,0.25);
+}
+
+/* icon animation */
+
+#chatButton:hover span{
+transform:translateX(4px);
+}
+
+/* smooth icon movement */
+
+#chatButton span{
+transition:transform .3s ease;
+}
+
+/* pulse glow */
+
+@keyframes pulse{
+0%{
+box-shadow:0 0 0 0 rgba(124,198,254,0.6);
+}
+70%{
+box-shadow:0 0 0 12px rgba(124,198,254,0);
+}
+100%{
+box-shadow:0 0 0 0 rgba(124,198,254,0);
+}
+}
+
+.chatWrapper{
+position:fixed;
+bottom:20px;
+right:20px;
+}
+
+/* tooltip bubble */
+
+.chatTooltip{
+position:absolute;
+bottom:60px;
+right:0;
+background:white;
+padding:8px 14px;
+border-radius:12px;
+font-size:13px;
+box-shadow:0 5px 15px rgba(0,0,0,0.15);
+opacity:0;
+transform:translateY(10px);
+transition:all .3s ease;
+pointer-events:none;
+white-space:nowrap;
+}
+
+/* show tooltip when hovering */
+
+.chatWrapper:hover .chatTooltip{
+opacity:1;
+transform:translateY(0);
+}
+
+/* CHAT WINDOW */
+
+#chatContainer{
+position:fixed;
+bottom:80px;
+right:20px;
+width:340px;
+background:white;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+display:none;
+overflow:hidden;
+transition:all .3s ease;
+transform-origin:bottom right;
+}
+
+#chatContainer:hover{
+box-shadow:0 14px 40px rgba(0,0,0,0.25);
+}
+
+/* CHAT HEADER */
+
+.chatHeader{
+background:linear-gradient(120deg,#7cc6fe,#cdb4ff);
+color:white;
+padding:12px;
+font-weight:bold;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.closeChat{
+cursor:pointer;
+}
+
+/* CHAT MESSAGES */
+
+.chatMessages{
+height:270px;
+overflow-y:auto;
+padding:12px;
+display:flex;
+flex-direction:column;
+gap:8px;
+}
+
+/* BOT MESSAGE */
+
+.botMsg{
+background:#f0f8ff;
+padding:10px 14px;
+border-radius:12px;
+max-width:80%;
+align-self:flex-start;
+}
+
+/* USER MESSAGE */
+
+.userMsg{
+background:#7cc6fe;
+color:white;
+padding:10px 14px;
+border-radius:12px;
+max-width:80%;
+align-self:flex-end;
+}
+
+/* INPUT AREA */
+
+.chatInput{
+display:flex;
+border-top:1px solid #ddd;
+}
+
+.chatInput input{
+flex:1;
+padding:10px;
+border:none;
+outline:none;
+}
+
+.chatInput button{
+background:#7cc6fe;
+color:white;
+border:none;
+padding:10px 15px;
+cursor:pointer;
+}
+
+.chatControls{
+display:flex;
+gap:6px;
+}
+
+.chatBtn{
+background:transparent;
+border:none;
+color:white;
+font-size:16px;
+cursor:pointer;
+padding:4px 6px;
+border-radius:4px;
+transition:background 0.2s;
+}
+
+.chatBtn:hover{
+background:rgba(255,255,255,0.25);
+}
+
+.closeBtn:hover{
+background:#ff5f57;
+}
+
+.fullscreen{
+
+width:90vw !important;
+height:90vh !important;
+
+bottom:5vh;
+right:5vw;
+
+}
+
+
+/* RESET BUTTON */
+
+.resetBtn{
+width:100%;
+border:none;
+background:#f3f7ff;
+padding:8px;
+cursor:pointer;
+}
+
+/* RESULT CARD */
+
+.resultCard{
+background:#f9fbff;
+border-radius:10px;
+padding:12px;
+margin:8px 0;
+border-left:4px solid #7cc6fe;
+box-shadow:0 3px 10px rgba(0,0,0,0.08);
+animation:cardIn .5s ease;
+}
+
+@keyframes cardIn{
+from{
+opacity:0;
+transform:translateY(15px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.resultTitle{
+font-weight:bold;
+font-size:15px;
+color:#333;
+}
+
+.resultInfo{
+margin-top:5px;
+color:#555;
+font-size:13px;
+}
+
+/* TYPING ANIMATION */
+
+.typing span{
+height:6px;
+width:6px;
+background:#555;
+display:inline-block;
+border-radius:50%;
+margin:2px;
+animation:typing 1s infinite;
+}
+
+.typing span:nth-child(2){
+animation-delay:.2s;
+}
+
+.typing span:nth-child(3){
+animation-delay:.4s;
+}
+
+@keyframes typing{
+0%{opacity:.2;}
+50%{opacity:1;}
+100%{opacity:.2;}
+}
+
+/* OPTION BUTTONS */
+
+.optionContainer{
+margin-top:6px;
+display:flex;
+flex-wrap:wrap;
+gap:6px;
+}
+
+.optionBtn{
+background:#eaf6ff;
+border:none;
+padding:6px 10px;
+border-radius:15px;
+cursor:pointer;
+font-size:12px;
+}
+
+.optionBtn:hover{
+background:#7cc6fe;
+color:white;
+}
+
+.fade-section{
+opacity:0;
+transform:translateY(40px);
+transition:all 0.8s ease;
+}
+
+.fade-section.visible{
+opacity:1;
+transform:translateY(0);
+}
+
+
+@keyframes gradientMove{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+
+.plane{
+position:absolute;
+top:40px;
+left:-60px;
+font-size:28px;
+animation:flyPlane 16s linear infinite;
+opacity:0.8;
+}
+
+header{
+position:relative;
+overflow:hidden;
+}
+
+@keyframes flyPlane{
+
+0%{
+transform:translateX(-80px) translateY(0px);
+}
+
+25%{
+transform:translateX(30vw) translateY(-10px);
+}
+
+50%{
+transform:translateX(60vw) translateY(5px);
+}
+
+75%{
+transform:translateX(90vw) translateY(-8px);
+}
+
+100%{
+transform:translateX(120vw) translateY(0px);
+}
+
+}

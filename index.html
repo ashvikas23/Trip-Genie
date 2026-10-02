@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>TripGenie - AI Travel Guide</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+
+<h1>✈ TripGenie</h1>
+<div class="plane">✈</div>
+
+<p>Your AI travel assistant for discovering the best India tour packages</p>
+
+</header>
+
+
+<section class="features fade-section">
+
+<div class="feature">
+<h3><span>🌍</span> Smart Travel Discovery</h3>
+<p>Tell TripGenie your preferences and get travel recommendations instantly.</p>
+</div>
+
+<div class="feature">
+<h3><span>💰</span> Budget Friendly</h3>
+<p>Find trips that match your budget and travel duration.</p>
+</div>
+
+<div class="feature">
+<h3><span>🤖</span> AI Chat Assistant</h3>
+<p>Chat naturally and discover the perfect tour package.</p>
+</div>
+
+</section>
+
+
+<section class="about fade-section">
+
+<h2>About TripGenie</h2>
+
+<p>
+TripGenie is an AI-powered travel assistant designed to help users quickly discover the best domestic tour packages in India.
+Instead of manually browsing through multiple travel listings, users can simply chat with TripGenie and share their preferences
+such as destination, budget, travel duration, travellers, and travel style.
+</p>
+
+<p>
+Using a recommendation engine, TripGenie analyzes the user's requirements and suggests the most suitable travel packages,
+making travel planning faster, easier, and more personalized.
+</p>
+
+</section>
+
+
+<section class="how fade-section">
+
+<h2>How TripGenie Works</h2>
+
+<div class="steps">
+
+<div class="step">💬 Chat with TripGenie</div>
+<div class="step">🧠 AI understands your travel preferences</div>
+<div class="step">🔎 Finds the best matching packages</div>
+<div class="step">✈️ Recommends trips instantly</div>
+
+</div>
+
+</section>
+
+
+<section class="popular fade-section">
+
+<h2>Popular Destinations</h2>
+
+<div class="destinations">
+
+<div class="dest">🏝 Goa</div>
+<div class="dest">🏔 Manali</div>
+<div class="dest">🌄 Kashmir</div>
+<div class="dest">🌿 Kerala</div>
+
+</div>
+
+</section>
+
+
+<section class="why fade-section">
+
+<h2>Why Choose TripGenie?</h2>
+
+<div class="features">
+
+<div class="feature">
+<h3>⚡ Instant Recommendations</h3>
+<p>Get travel package suggestions instantly using AI.</p>
+</div>
+
+<div class="feature">
+<h3>🎯 Personalized Trips</h3>
+<p>Recommendations based on your budget and travel style.</p>
+</div>
+
+<div class="feature">
+<h3>🌍 Explore India</h3>
+<p>Discover amazing destinations across India.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<div class="chatWrapper">
+
+<div class="chatTooltip">
+👋 Ask me about your next trip!
+</div>
+
+<button id="chatButton" onclick="toggleChat()">
+<span>💬</span> Ask TripGenie
+</button>
+
+</div>
+
+
+<div id="chatContainer">
+
+<div class="chatHeader">
+
+<span>🤖 TripGenie AI Assistant</span>
+
+<div class="chatControls">
+<button onclick="minimizeChat()" class="chatBtn">—</button>
+<button onclick="maximizeChat()" class="chatBtn">□</button>
+<button onclick="toggleChat()" class="chatBtn closeBtn">×</button>
+</div>
+
+</div>
+
+
+<div id="messages" class="chatMessages">
+
+<div class="botMsg">
+Hello! Where would you like to travel?
+</div>
+
+</div>
+
+
+<div class="chatInput">
+
+<input type="text" id="userInput" placeholder="Type your answer..." autocomplete="off">
+
+<button onclick="sendMessage()">Send</button>
+
+</div>
+
+
+<button class="resetBtn" onclick="resetChat()">New Search</button>
+
+</div>
+
+
+<script src="script.js"></script>
+
+<script>
+
+window.onload=function(){
+resetChat()
+}
+
+</script>
+
+</body>
+</html>
